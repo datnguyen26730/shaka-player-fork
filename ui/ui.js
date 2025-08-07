@@ -90,7 +90,6 @@ shaka.ui.Overlay = class {
     if (!video.controls) {
       player.setVideoContainer(videoContainer);
     }
-
     videoContainer['ui'] = this;
     video['ui'] = this;
     /** @private {shaka.ui.Watermark} */
@@ -259,6 +258,7 @@ shaka.ui.Overlay = class {
       'time_and_duration',
       'spacer',
       'overflow_menu',
+      'report',
     ];
 
     if (window.chrome) {
@@ -277,13 +277,13 @@ shaka.ui.Overlay = class {
       overflowMenuButtons: [
         'captions',
         'quality',
-        'language',
+        'audio_selection',
         'chapter',
         'picture_in_picture',
         'playback_rate',
-        'recenter_vr',
-        'toggle_stereoscopic',
-        'save_video_frame',
+        // 'recenter_vr',
+        // 'toggle_stereoscopic',
+        // 'save_video_frame',
       ],
       statisticsList: [
         'width',

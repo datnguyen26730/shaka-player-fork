@@ -301,3 +301,9 @@ translations:
    sjn-literal: "loud(ness)"
    sjn-roman: "brui"
    sjn: ""
+
+ - key: AUDIO
+   english: "Audio"
+   sjn-literal: "voice"
+   sjn-roman: "lû"
+   sjn: ""

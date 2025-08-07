@@ -372,9 +372,7 @@ shaka.ui.ResolutionSelection = class extends shaka.ui.SettingsMenu {
   updateResolutionSelection_() {
     /** @type {!Array<shaka.extern.VideoTrack>} */
     let tracks = this.player.getVideoTracks() || [];
-
     const selectedTrack = tracks.find((track) => track.active);
-
     tracks = tracks.filter((track, idx) => {
       // Keep the first one with the same height and framerate or bandwidth.
       const otherIdx = tracks.findIndex((t) => {
@@ -402,7 +400,6 @@ shaka.ui.ResolutionSelection = class extends shaka.ui.SettingsMenu {
     });
 
     const abrEnabled = this.player.getConfiguration().abr.enabled;
-
     // Add new ones
     for (const track of tracks) {
       const button = shaka.util.Dom.createButton();
@@ -427,7 +424,6 @@ shaka.ui.ResolutionSelection = class extends shaka.ui.SettingsMenu {
         markEl.textContent = mark;
         button.appendChild(markEl);
       }
-
       if (!abrEnabled && track == selectedTrack) {
         // If abr is disabled, mark the selected track's resolution.
         button.ariaSelected = 'true';
@@ -480,12 +476,12 @@ shaka.ui.ResolutionSelection = class extends shaka.ui.SettingsMenu {
     if (videoLayout.includes('CH-STEREO')) {
       text += ' 3D';
     }
+    // Math.round(firstTrack.frameRate || 0) ==
+    // Math.round(secondTrack.frameRate || 0);
     const basicResolutionComparison = (firstTrack, secondTrack) => {
       return firstTrack != secondTrack &&
           firstTrack.height == secondTrack.height &&
-          firstTrack.hdr == secondTrack.hdr &&
-          Math.round(firstTrack.frameRate || 0) ==
-          Math.round(secondTrack.frameRate || 0);
+          firstTrack.hdr == secondTrack.hdr;
     };
     const hasDuplicateResolution = tracks.some((otherTrack) => {
       return basicResolutionComparison(track, otherTrack);

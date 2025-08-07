@@ -63,6 +63,7 @@ describe('UI', () => {
       overflowMenuButtons: [
         'captions',
         'quality',
+        'audio_selection',
         'language',
         'picture_in_picture',
         'cast',

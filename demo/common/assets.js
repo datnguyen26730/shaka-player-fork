@@ -247,6 +247,16 @@ shakaAssets.UplynkRequestFilter = (type, request) => {
 shakaAssets.testAssets = [
   // Shaka assets {{{
   new ShakaDemoAssetInfo(
+      /* name= */ 'Multi-codec, multilingual, HLS',
+      /* iconUri= */ 'https://storage.googleapis.com/shaka-asset-icons/dark_truth.png',
+      /* manifestUri= */ 'https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8',
+      /* source= */ shakaAssets.Source.SHAKA)
+      .addFeature(shakaAssets.Feature.DASH)
+      .addFeature(shakaAssets.Feature.HIGH_DEFINITION)
+      .addFeature(shakaAssets.Feature.MP4)
+      .addFeature(shakaAssets.Feature.WEBM)
+      .addFeature(shakaAssets.Feature.OFFLINE),
+  new ShakaDemoAssetInfo(
       /* name= */ 'Big Buck Bunny: the Dark Truths of a Video Dev Cartoon (DASH)',
       /* iconUri= */ 'https://storage.googleapis.com/shaka-asset-icons/dark_truth.png',
       /* manifestUri= */ 'https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths/dash.mpd',

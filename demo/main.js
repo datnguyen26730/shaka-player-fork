@@ -9,10 +9,8 @@ goog.provide('shakaDemo.Main');
 
 goog.require('ShakaDemoAssetInfo');
 goog.require('goog.asserts');
-goog.require('shakaDemo.CloseButton');
 goog.require('shakaDemo.Utils');
 goog.require('shakaDemo.Visualizer');
-goog.require('shakaDemo.VisualizerButton');
 
 /**
  * Shaka Player demo, main section.
@@ -417,10 +415,10 @@ shakaDemo.Main = class {
       // sense to stop playing a video if you can't start playing other videos.
 
       // Register custom controls to the UI.
-      const closeFactory = new shakaDemo.CloseButton.Factory();
-      shaka.ui.Controls.registerElement('close', closeFactory);
-      const visualizerFactory = new shakaDemo.VisualizerButton.Factory();
-      shaka.ui.OverflowMenu.registerElement('visualizer', visualizerFactory);
+      // const closeFactory = new shakaDemo.CloseButton.Factory();
+      // shaka.ui.Controls.registerElement('close', closeFactory);
+      // const visualizerFactory = new shakaDemo.VisualizerButton.Factory();
+      // shaka.ui.OverflowMenu.registerElement('visualizer', visualizerFactory);
 
       // Configure UI.
       this.configureUI_();

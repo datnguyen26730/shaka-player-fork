@@ -12,7 +12,7 @@ goog.require('shaka.ads.Utils');
 goog.require('shaka.log');
 goog.require('shaka.ui.Controls');
 goog.require('shaka.ui.Element');
-goog.require('shaka.ui.Enums');
+// goog.require('shaka.ui.Enums');
 goog.require('shaka.ui.Locales');
 goog.require('shaka.ui.Localization');
 goog.require('shaka.ui.Utils');
@@ -168,8 +168,8 @@ shaka.ui.OverflowMenu = class extends shaka.ui.Element {
     this.overflowMenuButton_.classList.add('shaka-no-propagation');
     this.overflowMenuButton_.classList.add('material-icons-round');
     this.overflowMenuButton_.classList.add('shaka-tooltip');
-    this.overflowMenuButton_.textContent =
-      shaka.ui.Enums.MaterialDesignIcons.OPEN_OVERFLOW;
+    this.overflowMenuButton_.innerHTML =
+    `<span class="icon-settings"></span>`;
     const markEl = shaka.util.Dom.createHTMLElement('span');
     markEl.classList.add('shaka-overflow-quality-mark');
     markEl.style.display = 'none';

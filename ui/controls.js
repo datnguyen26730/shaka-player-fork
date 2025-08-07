@@ -1023,7 +1023,6 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
     // Use our controls by default, without anyone calling
     // setEnabledShakaControls:
     this.videoContainer_.setAttribute('shaka-controls', 'true');
-
     this.eventManager_.listen(this.controlsContainer_, 'touchend', (e) => {
       this.onContainerTouch_(e);
     });

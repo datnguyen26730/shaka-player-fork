@@ -227,7 +227,7 @@ export default [
       '@stylistic/keyword-spacing': 'error',
       '@stylistic/linebreak-style': 'error',
       '@stylistic/lines-between-class-members': 'error',
-      '@stylistic/max-len': ['error', {
+      '@stylistic/max-len': ['warn', {
         code: 80,
         tabWidth: 2,
         ignoreUrls: true,

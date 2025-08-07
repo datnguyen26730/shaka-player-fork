@@ -134,6 +134,23 @@
   z-index: 1;
 }
 
+/* Container for controls positioned at the top of the video container:
+ * controls button panel and the seek bar. */
+.shaka-top-controls {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 1;
+}
+
 /* This is the container for the horizontal row of controls above the seek bar.
  * It sits above (Y axis) the seek bar, and below (Y axis) the giant play button
  * in the middle. */
@@ -192,11 +209,11 @@
     text-shadow: 0 0 2px @general-background-color;
 
     &.material-icons-round {
-      font-size: 34px;
+      font-size: 24px;
     }
 
     &.shaka-mute-button {
-      font-size: 28px;
+      font-size: 24px;
     }
 
     &.shaka-overflow-menu-button {
@@ -460,4 +477,12 @@
   * {
     cursor: none !important;
   }
+}
+
+.report-button-container {
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  height: auto;
+  width: auto;
 }

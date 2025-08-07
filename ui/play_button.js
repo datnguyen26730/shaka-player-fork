@@ -9,7 +9,6 @@ goog.provide('shaka.ui.PlayButton');
 
 goog.require('shaka.ads.Utils');
 goog.require('shaka.ui.Element');
-goog.require('shaka.ui.Enums');
 goog.require('shaka.ui.Locales');
 goog.require('shaka.ui.Localization');
 goog.require('shaka.util.Dom');
@@ -139,11 +138,12 @@ shaka.ui.PlayButton = class extends shaka.ui.Element {
    * To be overridden by subclasses.
    */
   updateIcon() {
-    const Icons = shaka.ui.Enums.MaterialDesignIcons;
     if (this.isEnded() && this.video.duration) {
-      this.button.textContent = Icons.REPLAY;
+      this.button.innerHTML = `<span class="icon-play-03"></span>`;
     } else {
-      this.button.textContent = this.isPaused() ? Icons.PLAY : Icons.PAUSE;
+      this.button.innerHTML = this.isPaused() ?
+       `<span class="icon-play-03"></span>` :
+       `<span class="icon-pause-03"></span>`;
     }
   }
 };
