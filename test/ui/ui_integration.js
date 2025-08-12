@@ -55,6 +55,7 @@ describe('UI', () => {
         'time_and_duration',
         'mute',
         'volume',
+        'chapter',
         'fullscreen',
         'overflow_menu',
         'fast_forward',

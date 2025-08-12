@@ -61,6 +61,10 @@ shaka.ui.ChapterSelection = class extends shaka.ui.SettingsMenu {
       this.updateChapters_();
     });
 
+    this.eventManager.listen(this.player, 'textchanged', () => {
+      this.updateChapters_();
+    });
+
     // Set up all the strings in the user's preferred language.
     this.updateLocalizedStrings_();
 

@@ -259,6 +259,7 @@ shaka.ui.Overlay = class {
       'spacer',
       'overflow_menu',
       'report',
+      'chapter',
     ];
 
     if (window.chrome) {
