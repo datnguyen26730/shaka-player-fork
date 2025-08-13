@@ -95,6 +95,7 @@ shaka.extern.UIQualityMarks;
  *
  * @typedef {{
  *   controlPanelElements: !Array<string>,
+ *   controlTopPanelElements: !Array<string>,
  *   overflowMenuButtons: !Array<string>,
  *   contextMenuElements: !Array<string>,
  *   statisticsList: !Array<string>,
@@ -141,6 +142,8 @@ shaka.extern.UIQualityMarks;
  *
  * @property {!Array<string>} controlPanelElements
  *   The ordered list of control panel elements of the UI.
+ * @property {!Array<string>} controlTopPanelElements
+ *   The ordered list of control top panel elements of the UI.
  * @property {!Array<string>} overflowMenuButtons
  *   The ordered list of the overflow menu buttons.
  * @property {!Array<string>} contextMenuElements

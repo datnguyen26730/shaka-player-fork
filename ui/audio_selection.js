@@ -86,7 +86,7 @@ shaka.ui.AudioSelection = class extends shaka.ui.SettingsMenu {
     this.button.setAttribute('shaka-status', this.currentSelection.innerText);
 
     const numberOfItems = this.menu.getElementsByTagName('button').length;
-    shaka.ui.Utils.setDisplay(this.button, numberOfItems >= 1);
+    shaka.ui.Utils.setDisplay(this.button, numberOfItems > 1);
   }
 
   /**

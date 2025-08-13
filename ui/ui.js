@@ -274,6 +274,7 @@ shaka.ui.Overlay = class {
     controlPanelElements.push('fullscreen');
 
     const config = {
+      controlTopPanelElements: [],
       controlPanelElements,
       overflowMenuButtons: [
         'captions',

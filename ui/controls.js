@@ -1013,6 +1013,7 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
             'shaka-show-controls-on-mouse-over'));
   }
 
+
   /** @private */
   addControlsContainer_() {
     /** @private {HTMLElement} */
@@ -1065,7 +1066,12 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
     // black gradient scrim at the end of the controls.
     const scrimContainer = shaka.util.Dom.createHTMLElement('div');
     scrimContainer.classList.add('shaka-scrim-container');
+
+    const topScrimContainer = shaka.util.Dom.createHTMLElement('div');
+    topScrimContainer.classList.add('shaka-top-scrim-container');
+
     this.controlsContainer_.appendChild(scrimContainer);
+    this.controlsContainer_.appendChild(topScrimContainer);
   }
 
   /** @private */
@@ -1152,11 +1158,25 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
     this.bottomControls_.classList.add('shaka-no-propagation');
     this.controlsContainer_.appendChild(this.bottomControls_);
 
+    /** @private {!HTMLElement} */
+    this.topControls_ = shaka.util.Dom.createHTMLElement('div');
+    this.topControls_.classList.add('shaka-top-controls');
+    this.topControls_.classList.add('shaka-no-propagation');
+    this.controlsContainer_.appendChild(this.topControls_);
+
     // Overflow menus are supposed to hide once you click elsewhere
     // on the page. The click event listener on window ensures that.
     // However, clicks on the bottom controls don't propagate to the container,
     // so we have to explicitly hide the menus onclick here.
     this.eventManager_.listen(this.bottomControls_, 'click', (e) => {
+      // We explicitly deny this measure when clicking on buttons that
+      // open submenus in the control panel.
+      if (!e.target['closest']('.shaka-overflow-button')) {
+        this.hideSettingsMenus();
+      }
+    });
+
+    this.eventManager_.listen(this.topControls_, 'click', (e) => {
       // We explicitly deny this measure when clicking on buttons that
       // open submenus in the control panel.
       if (!e.target['closest']('.shaka-overflow-button')) {
@@ -1178,6 +1198,14 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
     }
     this.bottomControls_.appendChild(this.controlsButtonPanel_);
 
+
+    /** @private {!HTMLElement} */
+    this.topControlsButtonPanel_ = shaka.util.Dom.createHTMLElement('div');
+    this.topControlsButtonPanel_.classList.add('shaka-controls-button-panel');
+    this.topControlsButtonPanel_.classList.add(
+        'shaka-show-controls-on-mouse-over');
+    this.topControls_.appendChild(this.topControlsButtonPanel_);
+
     // Create the elements specified by controlPanelElements
     for (const name of this.config_.controlPanelElements) {
       if (shaka.ui.ControlsPanel.elementNamesToFactories_.get(name)) {
@@ -1192,6 +1220,15 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
       } else {
         shaka.log.alwaysWarn('Unrecognized control panel element requested:',
             name);
+      }
+    }
+
+    for (const name of this.config_.controlTopPanelElements) {
+      if (shaka.ui.ControlsPanel.elementNamesToFactories_.get(name)) {
+        const factory =
+            shaka.ui.ControlsPanel.elementNamesToFactories_.get(name);
+        const element = factory.create(this.topControlsButtonPanel_, this);
+        this.elements_.push(element);
       }
     }
   }
