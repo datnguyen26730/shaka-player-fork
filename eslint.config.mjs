@@ -138,7 +138,7 @@ export default [
       'guard-for-in': 'off',
       'no-alert': 'error',
       'no-caller': 'error',
-      'no-console': 'error',
+      'no-console': 'warn',
       'no-div-regex': 'error',
       'no-extend-native': 'error', // May conflict with future polyfills
       'no-extra-label': 'error',

@@ -1098,19 +1098,13 @@ shaka.ui.Controls = class extends shaka.util.FakeEventTarget {
     spinner.classList.add('shaka-spinner');
     this.spinnerContainer_.appendChild(spinner);
 
-    const str = `<svg focusable="false" stroke="currentColor"
-         viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg"
-         width="50px" height="50px" class="q-spinner text-grey-9">
-      <g transform="translate(1 1)" stroke-width="6" fill="none"
-        fill-rule="evenodd">
-        <circle stroke-opacity=".5" cx="18" cy="18" r="16"></circle>
-        <path d="M34 18c0-9.94-8.06-16-16-16">
-          <animateTransform attributeName="transform" type="rotate"
-            from="0 18 18" to="360 18 18" dur="1s" repeatCount="indefinite">
-          </animateTransform>
-        </path>
-      </g>
-    </svg>`;
+    const str = `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#paint0_angular_3401_80985_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0 0.014 -0.014 0 14 14)"><foreignObject x="-1066.67" y="-1066.67" width="2133.33" height="2133.33"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(123, 221, 157, 1) 0deg,rgba(123, 221, 157, 0) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM5.992 14C5.992 18.4227 9.5773 22.008 14 22.008C18.4227 22.008 22.008 18.4227 22.008 14C22.008 9.5773 18.4227 5.992 14 5.992C9.5773 5.992 5.992 9.5773 5.992 14Z" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.48235294222831726,&#34;g&#34;:0.86666667461395264,&#34;b&#34;:0.61568629741668701,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.48235294222831726,&#34;g&#34;:0.86666667461395264,&#34;b&#34;:0.61568629741668701,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.48235294222831726,&#34;g&#34;:0.86666667461395264,&#34;b&#34;:0.61568629741668701,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.48235294222831726,&#34;g&#34;:0.86666667461395264,&#34;b&#34;:0.61568629741668701,&#34;a&#34;:0.0},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:1.7145056465587942e-15,&#34;m01&#34;:-28.0,&#34;m02&#34;:28.0,&#34;m10&#34;:28.0,&#34;m11&#34;:1.7145056465587942e-15,&#34;m12&#34;:-1.7145056465587942e-15},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+<circle cx="14" cy="25" r="3" fill="#81DEA1"/>
+<defs>
+<clipPath id="paint0_angular_3401_80985_clip_path"><path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM5.992 14C5.992 18.4227 9.5773 22.008 14 22.008C18.4227 22.008 22.008 18.4227 22.008 14C22.008 9.5773 18.4227 5.992 14 5.992C9.5773 5.992 5.992 9.5773 5.992 14Z"/></clipPath></defs>
+</svg>
+`;
     spinner.insertAdjacentHTML('beforeend', str);
   }
 

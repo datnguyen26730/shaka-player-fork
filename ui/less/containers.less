@@ -143,8 +143,9 @@
   height: 48px;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: -48%;
   right: 0;
+  transform: translate(50%, 0px);
 }
 
 /* This is the container for the horizontal row of controls above the seek bar.
@@ -464,6 +465,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.shaka-spinner {
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    from {
+        transform: rotate(0deg);
+      }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 .shaka-hidden-fast-forward-container,

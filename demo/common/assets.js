@@ -245,6 +245,17 @@ shakaAssets.UplynkRequestFilter = (type, request) => {
 /* eslint-disable @stylistic/max-len */
 /** @const {!Array<!ShakaDemoAssetInfo>} */
 shakaAssets.testAssets = [
+  new ShakaDemoAssetInfo(
+      /* name= */ 'Test Google Ads IMA',
+      /* iconUri= */ 'https://storage.googleapis.com/shaka-asset-icons/dark_truth.png',
+      /* manifestUri= */ 'https://cdn.bitmovin.com/content/assets/sintel/hls/playlist.m3u8',
+      /* source= */ shakaAssets.Source.SHAKA)
+      .setAdTagUri(shakaAssets.AdTag.SINGLE_LINEAR_AD)
+      .addFeature(shakaAssets.Feature.DASH)
+      .addFeature(shakaAssets.Feature.HIGH_DEFINITION)
+      .addFeature(shakaAssets.Feature.MP4)
+      .addFeature(shakaAssets.Feature.WEBM)
+      .addFeature(shakaAssets.Feature.OFFLINE),
   // Shaka assets {{{
   new ShakaDemoAssetInfo(
       /* name= */ 'Multi-codec, multilingual, HLS',

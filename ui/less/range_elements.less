@@ -28,8 +28,9 @@
 /* These control the color and size of the various pieces. */
 @thumb-color: @general-font-color;
 @track-default-color: @general-font-color;
-@thumb-size: 12px;
+@thumb-size: 16px;
 @track-height: 4px;
+@circle-size: 16px;
 
 /* The range container is the div that contains a range element.
  * This div will act as a virtual track to allow us to style the track space.
@@ -82,6 +83,7 @@
 .thumb() {
   /* Remove default styles on WebKit-based and Blink-based browsers. */
   -webkit-appearance: none;
+  appearance: none;
 
   /* On some browsers (IE 11), the thumb has a border, which affects the size.
    * Disable it. */
@@ -93,7 +95,12 @@
   width: @thumb-size;
 
   /* Give it the desired color. */
-  background: @thumb-color;
+  background: rgba(0,0,0,0.9);
+  cursor: pointer;
+  border: 4px solid #7BDD9D;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 /* This is the actual range input element. */
@@ -186,10 +193,12 @@
   .range-element();
 }
 
+
+
 .shaka-seek-bar-container {
   .show-when-controls-shown();
   top: 5px;
-  height: 5px;
+  height: @track-height;
   margin-bottom: 0;
   background-clip: padding-box !important;
   border-top: 4px solid transparent;
@@ -197,13 +206,15 @@
 
   .shaka-seek-bar {
     transition: opacity cubic-bezier(0.4, 0, 0.6, 1) 250ms;
-    opacity: 0;
+    opacity: 1;
   }
 
   &:hover .shaka-seek-bar {
     opacity: 1;
   }
 }
+
+
 
 .shaka-ad-markers {
   .overlay-child();

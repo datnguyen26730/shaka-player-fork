@@ -341,12 +341,12 @@ shaka.ui.Overlay = class {
       seekBarColors: {
         base: 'rgba(255, 255, 255, 0.3)',
         buffered: 'rgba(255, 255, 255, 0.54)',
-        played: 'rgb(255, 255, 255)',
+        played: 'rgba(123, 221, 157, 1)',
         adBreaks: 'rgb(255, 204, 0)',
       },
       volumeBarColors: {
-        base: 'rgba(255, 255, 255, 0.54)',
-        level: 'rgb(255, 255, 255)',
+        base: 'rgba(255, 255, 255, 0.3)',
+        level: 'rgba(123, 221, 157, 1)',
       },
       qualityMarks: {
         '720': '',

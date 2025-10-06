@@ -93,6 +93,18 @@ shaka.ui.SeekBar = class extends shaka.ui.RangeElement {
      */
     this.wasPlaying_ = false;
 
+    // /** @private {!HTMLElement */
+    /** circle on progress bar*/
+    //     this.circleOnProgressBar_ = shaka.util.Dom.createHTMLElement('span');
+    //     this.circleOnProgressBar_.classList.add('shak
+    // a-circle-on-progress-bar');
+    //     this.circleOnProgressBar_.innerHTML = `
+    //     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+    //   <circle cx="8" cy="8" r="8" fill="#7BDD9D"/>
+    //   <circle cx="8" cy="8" r="4" fill="#272927"/>
+    // </svg>
+    //     `;
+    //     this.container.appendChild(this.circleOnProgressBar_);
 
     /** @private {!HTMLElement} */
     this.thumbnailContainer_ = shaka.util.Dom.createHTMLElement('div');
@@ -269,7 +281,6 @@ shaka.ui.SeekBar = class extends shaka.ui.RangeElement {
       // Can't seek yet.  Ignore.
       return;
     }
-
     // Update the UI right away.
     this.update();
 
@@ -342,6 +353,8 @@ shaka.ui.SeekBar = class extends shaka.ui.RangeElement {
 
     const seekRange = this.player.seekRange();
     const seekRangeSize = seekRange.end - seekRange.start;
+
+    // this.updateCirclePosition_(currentTime / seekRange.end);
 
     this.setRange(seekRange.start, seekRange.end);
 
@@ -538,6 +551,13 @@ shaka.ui.SeekBar = class extends shaka.ui.RangeElement {
       this.timeContainer_.textContent = this.timeFormatter_(totalSeconds);
     }
   }
+
+  // /** @private */
+  // updateCirclePosition_(percentage) {
+  //   const circlePosition = percentage * 100;
+  //   this.circleOnProgressBar_.style.visibility = 'visible';
+  //   this.circleOnProgressBar_.style.left = `calc(${circlePosition}% - 8px)`;
+  // }
 
 
   /**
